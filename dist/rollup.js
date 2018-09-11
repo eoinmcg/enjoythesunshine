@@ -528,6 +528,7 @@
       isLooping: false,
       parts: [
         'VOXA41A#41A41A#41G44C54',
+        'BSSA41A#41A41A#41G44C54',
       ],
     },
     dead: {
@@ -535,12 +536,14 @@
       isLooping: false,
       parts: [
         'VOXF31E31D31B31A#24',
+        'BSSF31E31D31B31A#24',
       ],
     },
-    title: {
+    help: {
       bpm: 180,
-      isLooping: true,
+      isLooping: false,
       parts: [
+        'VOXC22C22G12G12A#12A#12B12B12G12E12G14',
         'BSSC22C22G12G12A#12A#12B12B12G12E12G14',
       ],
     },
@@ -1000,6 +1003,7 @@
         {t: 3000, n: 'Baddie', d: { i: 'hornet', yRange: 100} },
         {t: 5000, n: 'Cat', d: {} },
         {t: 7000, n: 'Baddie', d: { i: 'gull', yRange: 100} },
+        {t: 8000, n: 'Baddie', d: { i: 'hornet', yRange: 50} }
       ]
     }
   ];
@@ -1111,7 +1115,7 @@
         y: this.g.h - 200,
         x: 180,
         col: 14,
-        clickCol: 12,
+        clickCol: 10,
         text: 'HELP',
         cb: () => {
           this.g.changeState('Help');
@@ -1333,9 +1337,12 @@
   class Help {
     constructor(g) {
       this.g = g;
+      this.h = g.imgs.font_4_2;
+      this.p = g.imgs.font_2_2;
     }
 
     init() {
+      this.g.music.play('help');
       this.g.spawn('Control', {
         y: this.g.h - 60,
         col: 11,
@@ -1358,8 +1365,34 @@
     }
 
     render() {
-      this.g.draw.clear(9);
-      for (let n of this.g.ents) { n.render(); }
+      let g = this.g,
+          i = g.imgs;
+      g.draw.clear(12);
+      g.draw.text('CONTROLS', this.h, false, 10);
+      g.draw.text(g.mobile ? 'TAP ON SCREEN BUTTONS' : 'L R CURSORS', this.p, false, 50);
+      g.draw.text(g.mobile ? '' : 'X TO FLY', this.p, false, 70);
+
+      g.draw.text('YOUR PURPOSE', this.h, false, 130);
+      g.draw.text('SWOOP DOWN TO STEAL ITEMS', this.p, false, 170);
+      g.draw.img(i.phone, 100, 190, 4);
+      g.draw.img(i.bun, 130, 190, 4);
+      g.draw.img(i.melon, 170, 190, 4);
+      g.draw.img(i.lolly, 210, 190, 4);
+      g.draw.text('THEN DROP IN NEST', this.p, false, 240);
+      g.draw.img(i.nest, 150, 260, 4);
+
+
+      g.draw.text('AVOID', this.h, false, 320);
+      g.draw.img(i.hornet, 100, 360, 4);
+      g.draw.img(i.gull, 150, 360, 4);
+      g.draw.ctx.drawImage(
+        i.cat,
+        0, 0,
+        8, 8,
+        200, 360,
+        24, 24);
+
+      for (let n of g.ents) { n.render(); }
     }
   }
 
@@ -1511,7 +1544,7 @@
       this.vy = 0;
       this.maxVy = 4.5;
       this.floor = o.p.floor - this.h / 2;
-      this.lives = 0;
+      this.lives = 2;
       this.poops = 50;
       this.isHolding = false;
       this.isStanding = false;
@@ -2121,7 +2154,7 @@
         this.clickCol = o.clickCol || 3;
         this.currentCol = this.col;
         this.clicked = false;
-        this.tX = o.x ? o.x + 5 : g.w / 2 - (g.draw.textWidth(this.text, this.p) / 2);
+        this.tX = o.x ? o.x + 20 : g.w / 2 - (g.draw.textWidth(this.text, this.p) / 2);
       }
       this.origX = this.x;
       this.origY = o.y;

@@ -27,6 +27,7 @@ export default [
       {t: 3000, n: 'Baddie', d: { i: 'hornet', yRange: 100} },
       {t: 5000, n: 'Cat', d: {} },
       {t: 7000, n: 'Baddie', d: { i: 'gull', yRange: 100} },
+      {t: 8000, n: 'Baddie', d: { i: 'hornet', yRange: 50} }
     ]
   }
 ];

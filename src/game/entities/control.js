@@ -19,7 +19,7 @@ export class Control extends Sprite {
       this.clickCol = o.clickCol || 3;
       this.currentCol = this.col;
       this.clicked = false;
-      this.tX = o.x ? o.x + 5 : g.w / 2 - (g.draw.textWidth(this.text, this.p) / 2);
+      this.tX = o.x ? o.x + 20 : g.w / 2 - (g.draw.textWidth(this.text, this.p) / 2);
     }
     this.origX = this.x;
     this.origY = o.y;

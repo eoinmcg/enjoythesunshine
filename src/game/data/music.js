@@ -17,6 +17,7 @@ const tracks = {
     isLooping: false,
     parts: [
       'VOXA41A#41A41A#41G44C54',
+      'BSSA41A#41A41A#41G44C54',
     ],
   },
   dead: {
@@ -24,12 +25,14 @@ const tracks = {
     isLooping: false,
     parts: [
       'VOXF31E31D31B31A#24',
+      'BSSF31E31D31B31A#24',
     ],
   },
-  title: {
+  help: {
     bpm: 180,
-    isLooping: true,
+    isLooping: false,
     parts: [
+      'VOXC22C22G12G12A#12A#12B12B12G12E12G14',
       'BSSC22C22G12G12A#12A#12B12B12G12E12G14',
     ],
   },

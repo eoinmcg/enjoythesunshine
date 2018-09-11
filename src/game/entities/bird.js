@@ -21,7 +21,7 @@ export class Bird extends Sprite {
     this.vy = 0;
     this.maxVy = 4.5;
     this.floor = o.p.floor - this.h / 2;
-    this.lives = 0;
+    this.lives = 2;
     this.poops = 50;
     this.isHolding = false;
     this.isStanding = false;
