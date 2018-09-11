@@ -4,7 +4,8 @@ Entry for [#js13kgames 2018](https://js13kgames.com)
 
 By [@eoinmcg](https://twitter.com/eoinmcg)
 
-![Screenshot](https://github.com/eoinmcg/sunshine/raw/master/promo/small.png)
+![Screenshot](https://github.com/eoinmcg/sunshine/raw/master/promo/banner1.png)
+![Screenshot](https://github.com/eoinmcg/sunshine/raw/master/promo/video.gif)
 
 Another beautiful day. But, look! Nobody appreciates it.
 

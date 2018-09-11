@@ -1,7 +1,7 @@
 {
-  "name": "Offline",
+  "name": "EnjoyTheSunShine_GetOffline",
   "version": "0.0.1",
-  "description": "",
+  "description": "Entry for js13kgames.com 2018",
   "main": "index.js",
   "scripts": {
     "build": "npm run compile && node scripts/zip.js",
@@ -34,8 +34,5 @@
     "unzip": "^0.1.11",
     "webpack": "^4.10.2",
     "webpack-dev-server": "^3.1.4"
-  },
-  "dependencies": {
-    "howler": "^2.0.12"
   }
 }
