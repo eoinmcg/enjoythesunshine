@@ -1138,7 +1138,7 @@
         i = g.input.keys;
 
       if (this.canStart && (i.x || i['Enter'])) {
-        this.g.changeState(Main);
+        this.g.changeState('Main');
       }
       this.bg.update(dt);
       this.bg.bg[0].y = 100;
@@ -1159,7 +1159,7 @@
     }
   }
 
-  class Main$1 {
+  class Main {
     constructor(g) {
       this.g = g;
       this.f = g.imgs.font_6_3;
@@ -2219,7 +2219,7 @@
   o.states = { 
     Title, 
     Help, 
-    Main: Main$1
+    Main
     };
   o.ents = {
     Sprite,
