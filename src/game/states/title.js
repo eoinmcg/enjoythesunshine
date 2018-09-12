@@ -47,7 +47,7 @@ export default class Title {
       i = g.input.keys
 
     if (this.canStart && (i.x || i['Enter'])) {
-      this.g.changeState(Main);
+      this.g.changeState('Main');
     }
     this.bg.update(dt);
     this.bg.bg[0].y = 100;
